@@ -1,0 +1,50 @@
+import{a4 as w,cX as F,aj as r,bs as p,cY as W,c7 as Y,cZ as k,bz as j,bB as K,bA as G,b_ as b,bD as J,bF as L,d as l,as as s,k as f,a0 as n,bN as D,bG as u,bH as c,bI as Z,bJ as _,bL as g,bK as R,c_ as X,c$ as q,d0 as O,d1 as Q,d2 as U,c2 as S,d3 as ee}from"./index-CyMr76_m.js";const te=w.div`
+  align-items: center;
+  cursor: pointer;
+  font-size: 2.9em;
+  text-align: center;
+  word-wrap: break-word;
+  line-height: initial;
+  ${e=>e.$animationStyle}
+  background-color: ${e=>{var t;return(t=e.$style)==null?void 0:t.background}};
+ font-weight: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.textWeight}};
+border-radius: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.radius}};
+font-size: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.textSize}};
+rotate: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.rotation}};
+text-transform: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.textTransform}};
+color: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.text}};
+border: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.border}};
+border-style: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.borderStyle}};
+border-width: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.borderWidth}};
+font-family: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.fontFamily}};
+font-style: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.fontStyle}};
+margin: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.margin}};
+padding: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.padding}};
+background: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.background}};
+text-decoration: ${e=>{var t;return(t=e==null?void 0:e.$style)==null?void 0:t.textDecoration}};
+`,re=w.div`
+  width: 100%;
+  min-height: 35px;
+  display: flex;
+  justify-content: center;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+`,I=w(F)`
+background-color: ${e=>e.$style.background};
+font-weight: ${e=>e.$style.textWeight};
+border-radius: ${e=>e.$style.radius};
+font-size: ${e=>e.$style.textSize};
+rotate: ${e=>e.$style.rotation};
+text-transform: ${e=>e.$style.textTransform};
+color: ${e=>e.$style.text};
+border: ${e=>e.$style.border};
+border-style: ${e=>e.$style.borderStyle};
+border-width: ${e=>e.$style.borderWidth};
+font-family: ${e=>e.$style.fontFamily};
+font-style: ${e=>e.$style.fontStyle};
+margin: ${e=>e.$style.margin};
+padding: ${e=>e.$style.padding};
+background: ${e=>e.$style.background};
+text-decoration: ${e=>e.$style.textDecoration};
+`;function ae(e){const t=Math.floor(e/36e5),m=Math.floor(e%(1e3*60*60)/(1e3*60)),a=Math.floor(e%(1e3*60)/1e3),i=e%1e3;return`${$(t)}:${$(m)}:${$(a)}:${$(i,3)}`}function $(e,t=2){return String(e).padStart(t,"0")}const ne=[X,q,O,Q,U],le=[{label:r("timer.timer"),value:"timer"},{label:r("timer.countdown"),value:"countdown"}],ie={style:p(W),animationStyle:p(Y),startButtonStyle:p(k),resetButtonStyle:p(k),onEvent:j(ne),defaultValue:K("defaultValue","00:00:00:000"),timerType:G(le,"timer"),elapsedTime:b(0),timerState:b("stoped"),actionHandler:b(""),hideButton:J},oe=e=>{const[t,m]=n.useState(0),[a,i]=n.useState("stoped"),[v,h]=n.useState(0),[o,M]=n.useState(0),[z,x]=n.useState(!0);n.useEffect(()=>{e.actionHandler!=""&&(e.actionHandler==="start"?V():e.actionHandler==="pause"?H():e.actionHandler==="resume"?T():e.actionHandler==="reset"&&B(),e.dispatch(S("actionHandler","",!0)))},[e.actionHandler]),n.useEffect(()=>{a==="stoped"&&h(y)},[e.defaultValue.value]),n.useEffect(()=>{a==="started"&&C()},[t]),n.useEffect(()=>{a==="stoped"&&o&&o&&clearInterval(o),e.dispatch(S("timerState",a,!1))},[a]);const y=n.useMemo(()=>{const[d,N,P,A]=e.defaultValue.value&&e.defaultValue.value.split(":")||[];let E=parseInt(d,10)*36e5+parseInt(N,10)*6e4+parseInt(P,10)*1e3+parseInt(A,10);return isNaN(E)?0:E},[e.defaultValue.value]),C=()=>{M(Number(setInterval(()=>{let d=e.timerType==="timer"?Date.now()-t:y-(Date.now()-t);d<=0&&(i("stoped"),e.onEvent("countdown"),x(!1),d=0),h(d),e.dispatch(S("elapsedTime",d,!1))},18)))},V=()=>{i("started"),e.onEvent("start"),m(e.timerType==="timer"?Date.now()-y:Date.now())},H=()=>{o&&clearInterval(o),i("paused"),e.onEvent("pause")},T=()=>{m(e.timerType==="timer"?Date.now()-v:Date.now()-(y-v)),i("started"),e.onEvent("resume")},B=()=>{o&&clearInterval(o),i("stoped"),h(y),x(!0),e.onEvent("reset")};return s(te,{$style:e.style,$animationStyle:e.animationStyle,children:[ae(v),l(re,{hidden:e.hideButton,children:s(ee,{children:[l(I,{$style:e.startButtonStyle,disabled:!z,type:a==="stoped"?"primary":"default",onClick:()=>{a==="stoped"?V():a==="started"?H():a==="paused"&&T()},children:a==="stoped"?r("timer.start"):a==="started"?r("timer.pause"):r("timer.resume")}),l(I,{$style:e.resetButtonStyle,onClick:()=>B(),children:r("timer.reset")})]})})]})};let se=function(){return new L(ie,(e,t)=>l(oe,{...e,dispatch:t})).setPropertyViewFn(e=>s(f,{children:[["logic","both"].includes(n.useContext(D).editorModeStatus)&&s(f,{children:[s(u,{name:c.basic,children:[e.timerType.propertyView({label:r("timer.timerType")}),e.defaultValue.propertyView({label:r("timer.defaultValue")}),e.hideButton.propertyView({label:r("timer.hideButton")})]}),s(u,{name:c.interaction,children:[Z(e),e.onEvent.propertyView()]})]}),["layout","both"].includes(n.useContext(D).editorModeStatus)&&s(f,{children:[l(u,{name:c.style,children:e.style.getPropertyView()}),l(u,{name:c.animationStyle,hasTooltip:!0,children:e.animationStyle.getPropertyView()}),l(u,{name:c.startButtonStyle,children:e.startButtonStyle.getPropertyView()}),l(u,{name:c.resetButtonStyle,children:e.resetButtonStyle.getPropertyView()})]})]})).setExposeMethodConfigs([{method:{name:"start/pause",description:r("timer.startPause"),params:[]},execute:async(e,t)=>{e.children.timerState.value==="stoped"?e.children.actionHandler.dispatch(e.children.actionHandler.changeValueAction("start")):e.children.timerState.value==="paused"?e.children.actionHandler.dispatch(e.children.actionHandler.changeValueAction("resume")):e.children.timerState.value==="started"&&e.children.actionHandler.dispatch(e.children.actionHandler.changeValueAction("pause"))}},{method:{name:"reset",description:r("timer.reset"),params:[]},execute:async(e,t)=>{e.children.actionHandler.dispatch(e.children.actionHandler.changeValueAction("reset"))}}]).build()}();const ue=_(se,[new g("defaultValue",r("timer.defaultValue")),new g("elapsedTime",r("timer.elapsedTime")),new g("timerState",r("timer.timerState")),R]);export{ue as TimerComp};

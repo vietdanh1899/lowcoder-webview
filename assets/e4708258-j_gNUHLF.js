@@ -1,0 +1,1 @@
+import{dJ as o,F as n,dK as r,dL as a,d as l}from"./index-CyMr76_m.js";function i(s){return t=>{const e=o(),d={...t,globalExposing:{data:[{name:"currentUser",value:e},{name:"_",value:n,hideInLeftPanel:!0},{name:"dayjs",value:r,hideInLeftPanel:!0}],nodes:{currentUser:a(e),_:a(n),dayjs:a(r)}}};return l(s,{...d})}}export{i as withGlobalExposingData};

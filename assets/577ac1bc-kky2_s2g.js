@@ -1,0 +1,14 @@
+import{a4 as x,cL as B,bw as n,bD as c,aj as o,bT as w,c4 as f,bS as b,bx as p,bC as m,ep as v,bs as h,eq as V,c7 as T,cM as $,bF as S,d as s,as as a,k as u,bG as l,bH as i,a0 as r,bN as d,cx as I,bI as C,eb as P,bJ as D,bL as y,cy as L}from"./index-CyMr76_m.js";import{ButtonCompWrapper as M,Button100 as E,buttonRefMethods as k}from"./73e0b0c0-cg4qSQqq.js";const R=x.div`
+  display: flex;
+`,j=x(M)`
+  ${t=>t.$animationStyle}
+  width: 100%;
+  display: flex;
+  justify-content: ${t=>t.$align};
+
+  > button {
+    width: ${t=>t.$align!=="stretch"&&"auto"};
+    border: ${t=>!t.$showBorder&&"none"};
+    box-shadow: ${t=>!t.$showBorder&&"none"};
+  }
+`,A=function(){const t={value:B("value"),showText:n(c,!0),trueText:n(w,o("toggleButton.trueDefaultText")),falseText:n(w,o("toggleButton.falseDefaultText")),onEvent:f,disabled:b,loading:b,trueIcon:n(p,"/icon:solid/AngleUp"),falseIcon:n(p,"/icon:solid/AngleDown"),iconPosition:m,alignment:v,style:h(V),animationStyle:h(T),showBorder:n(c,!0),viewRef:$};return new S(t,e=>{const g=e.showText&&(e.value.value?e.trueText:e.falseText)||void 0;return s(j,{disabled:e.disabled,$align:e.alignment,$showBorder:e.showBorder,$animationStyle:e.animationStyle,children:a(E,{ref:e.viewRef,$buttonStyle:e.style,loading:e.loading,disabled:e.disabled,onClick:()=>{e.onEvent("change"),e.value.onChange(!e.value.value)},children:[e.iconPosition==="right"&&g,s(R,{children:e.value.value?e.trueIcon:e.falseIcon}),e.iconPosition==="left"&&g]})})}).setPropertyViewFn(e=>a(u,{children:[s(l,{name:i.basic,children:e.value.propertyView({label:o("prop.defaultValue"),tooltip:o("toggleButton.valueDesc")})}),(r.useContext(d).editorModeStatus==="logic"||r.useContext(d).editorModeStatus==="both")&&a(u,{children:[a(l,{name:i.interaction,children:[e.onEvent.getPropertyView(),I(e),C(e),P(e)]}),a(l,{name:i.advanced,children:[e.showText.propertyView({label:o("toggleButton.showText")}),e.showText.getView()&&e.trueText.propertyView({label:o("toggleButton.trueLabel")}),e.showText.getView()&&e.falseText.propertyView({label:o("toggleButton.falseLabel")}),e.trueIcon.propertyView({label:o("toggleButton.trueIconLabel")}),e.falseIcon.propertyView({label:o("toggleButton.falseIconLabel")}),e.showText.getView()&&e.iconPosition.propertyView({label:o("toggleButton.iconPosition"),radioButton:!0}),e.alignment.propertyView({label:o("toggleButton.alignment"),radioButton:!0})]})]}),(r.useContext(d).editorModeStatus==="layout"||r.useContext(d).editorModeStatus==="both")&&a(u,{children:[a(l,{name:i.style,children:[e.showBorder.propertyView({label:o("toggleButton.showBorder")}),e.style.getPropertyView()]}),s(l,{name:i.animationStyle,hasTooltip:!0,children:e.animationStyle.getPropertyView()})]})]})).setExposeMethodConfigs(k).build()}(),H=D(A,[new y("value",o("dropdown.textDesc")),new y("loading",o("button.loadingDesc")),...L]);export{H as ToggleButtonComp};
